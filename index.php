@@ -160,6 +160,7 @@
 
     <div class="col-md-2 bg-secondary p-0"> 
         <!-- sidenav -->
+        <!-- flower types -->
         <ul class="navbar-nav me-auto text-center">
             <li class="nav-item bg-info">
                 <a href="#" class="nav-link text-light"><h4>Flower types</h4></a>
@@ -190,6 +191,29 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link text-light">Wisteria</a>
+            </li>
+        
+        </ul>
+
+        <!-- flower colors -->
+        <ul class="navbar-nav me-auto text-center">
+            <li class="nav-item bg-info">
+                <a href="#" class="nav-link text-light"><h4>Flower colors</h4></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Blue/purple</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Burgundy</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Cream/white</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Green</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Pink/red</a>
             </li>
         
         </ul>
