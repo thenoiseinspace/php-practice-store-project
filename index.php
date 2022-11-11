@@ -112,8 +112,8 @@
                     <a href="#" class="btn btn-primary">Add to cart</a>
                     <a href="#" class="btn btn-primary">View more</a>
                     </div>
-                </div>
-        </div>
+                </div>         
+            </div> 
     </div>
 
 
@@ -153,12 +153,46 @@
                     <a href="#" class="btn btn-primary">Add to cart</a>
                     <a href="#" class="btn btn-primary">View more</a>
                     </div>
-                </div>
+                </div>      
         </div>
+</div>
+</div>
 
-
-    <div class="col-md-2"> 
+    <div class="col-md-2 bg-secondary p-0"> 
         <!-- sidenav -->
+        <ul class="navbar-nav me-auto text-center">
+            <li class="nav-item bg-info">
+                <a href="#" class="nav-link text-light"><h4>Flower types</h4></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Lily</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Chrysanthemum</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Dahlia</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Lavender</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Orchid</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Peony</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Rose</a>
+            </li>
+            <li class="nav-itemo">
+                <a href="#" class="nav-link text-light">Succulent</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Wisteria</a>
+            </li>
+        
+        </ul>
     </div>
 </div> 
 
