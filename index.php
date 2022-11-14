@@ -1,3 +1,4 @@
+<!-- http://localhost/php-practice-store-project/index.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
