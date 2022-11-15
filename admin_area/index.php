@@ -48,7 +48,7 @@
                 <div class="button text-center">
                     <button><a href="#" class="nav-link text-light bg-info p-1">Insert Products</a></button>
                     <button><a href="#" class="nav-link text-light bg-info p-1">View Products</a></button>
-                    <button><a href="insert_categories.php" class="nav-link text-light bg-info p-1">Insert Categories</a></button>
+                    <button><a href="index.php?insert_category" class="nav-link text-light bg-info p-1">Insert Categories</a></button>
                     <button><a href="#" class="nav-link text-light bg-info p-1">View Categories</a></button>
                     <button><a href="#" class="nav-link text-light bg-info p-1">Insert Brands</a></button>
                     <button><a href="#" class="nav-link text-light bg-info p-1">View Brands</a></button>
@@ -60,6 +60,17 @@
             </div> 
 
         </div>
+
+
+ <!--fourth child-->
+<div class="container">
+    <?php 
+        if(isset($_GET['insert_category'])){
+            include('insert_categories.php');
+        }
+   ?> 
+</div> 
+
 
 
         <!--last child - footer-->
