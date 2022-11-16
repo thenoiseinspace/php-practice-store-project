@@ -2,13 +2,23 @@
 include('../includes/connect.php');
 if(isset($_POST['insert_cat'])){
     $category_title=$_POST['cat_title']; 
+   
+    //select data from database
     // note--those are backticks around categories, not single quotes
+    //this first one checks to make sure the category that the user is trying to add isnt already in the database
+    $select_query="Select * from `categories` where category_title='$category_title'"; 
+    $result_select=mysqli_query($con,$select_query); 
+    $number=mysqli_num_rows($result_select);
+      if ($number>0){
+        echo "<script>alert('Category already exists in database')</script>"; 
+      } else{
+
     $insert_query="insert into `categories` (category_title) values ('$category_title')";
     $result=mysqli_query($con,$insert_query); 
     if($result){
       echo "<script>alert('Category has been inserted successfully')</script>"; 
     }
-}
+}}
 
 ?>
 
