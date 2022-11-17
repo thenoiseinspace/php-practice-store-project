@@ -1,4 +1,10 @@
 <!-- http://localhost/php-practice-store-project/index.php -->
+<!-- linking connection file -->
+<?php
+include("includes/connect.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,11 +167,19 @@
 
     <div class="col-md-2 bg-secondary p-0"> 
         <!-- sidenav -->
-        <!-- flower types -->
+        <!-- flower types aka brands to be displayed-->
         <ul class="navbar-nav me-auto text-center">
             <li class="nav-item bg-info">
-                <a href="#" class="nav-link text-light"><h4>Flower types</h4></a>
+                <a href="#" class="nav-link text-light"><h4>Flower types aka Delivery Brands</h4></a>
             </li>
+<?php
+$select_brands= "Select * from `brands`";
+$result_brands=mysqli_query($con, $select_brands);
+$row_data=mysqli_fetch_assoc($result_brands); 
+echo $row_data['brand_title'];
+
+?>
+
             <li class="nav-item">
                 <a href="#" class="nav-link text-light">Lily</a>
             </li>
