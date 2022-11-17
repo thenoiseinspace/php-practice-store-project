@@ -181,7 +181,7 @@ while($row_data=mysqli_fetch_assoc($result_brands)){
     $brand_title=$row_data['brand_title'];
     $brand_id=$row_data['brand_id'];
     echo " <li class='nav-item'>
-    <a href='#' class='nav-link text-light'>$brand_title</a>
+    <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
 </li>" ;
 }
 
@@ -220,9 +220,24 @@ while($row_data=mysqli_fetch_assoc($result_brands)){
         <!-- flower colors -->
         <ul class="navbar-nav me-auto text-center">
             <li class="nav-item bg-info">
-                <a href="#" class="nav-link text-light"><h4>Flower colors</h4></a>
+                <a href="#" class="nav-link text-light"><h4>Flower colors aka categories</h4></a>
             </li>
-            <li class="nav-item">
+
+            <?php
+$select_categories= "Select * from `categories`";
+$result_categories=mysqli_query($con, $select_categories);
+// $row_data=mysqli_fetch_assoc($result_brands); 
+// echo $row_data['brand_title'];
+while($row_data=mysqli_fetch_assoc($result_categories)){
+    $category_title=$row_data['category_title'];
+    $category_id=$row_data['category_id'];
+    echo " <li class='nav-item'>
+    <a href='index.php?category=$category_id' class='nav-link text-light'>$category_title</a>
+</li>" ;
+}
+
+?>
+            <!-- <li class="nav-item">
                 <a href="#" class="nav-link text-light">Blue/purple</a>
             </li>
             <li class="nav-item">
@@ -236,7 +251,7 @@ while($row_data=mysqli_fetch_assoc($result_brands)){
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link text-light">Pink/red</a>
-            </li>
+            </li> -->
         
         </ul>
     </div>
