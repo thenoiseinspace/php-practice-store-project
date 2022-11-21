@@ -3,23 +3,33 @@ include('../includes/connect.php');
 if(isset($_POST['insert_product'])){
 
     $product_title=$_POST['product_title'];
-    $description=$_POST['description'];
+    $description=$_POST['product_description'];
     $product_keywords=$_POST['product_keywords'];
     $product_category=$_POST['product_category'];
     $product_brand=$_POST['product_brand'];
     $product_price=$_POST['product_price'];
+    $product_status='true'; 
 
     //accessing images
-    $product_image1=$_POST['product_image1']['name'];
+    $product_image1=$_FILES['product_image1']['name'];
     // $product_title=$_POST['product_title'];
 
     //accessing image temp name
-    $temp_image1=$_POST['product_image1']['tmp_name'];
+    $temp_image1=$_FILES['product_image1']['tmp_name'];
 
     //checking empty condition
     if($product_title=='' or  $description=='' or $product_keywords=='' or $product_category=='' or $product_brand=='' or $product_price=='' or $product_image1=='' or  $temp_image1=='' ){
         echo "<script>alert('Please fill out all fields.') </script>";
         exit();
+    } else{
+        move_uploaded_file($temp_image1, './product_images/$product_image1');
+
+        //insert query
+        $insert_products="insert into `products` (product_title, product_description, product_keywords, category_id, brand_id, product_image1, product_price, date, status) values ('$product_title', '$description',  '$product_keywords', '$product_category', '$product_brand', '$product_image1', '$product_price', NOW(), '$product_status')"; 
+        $result_query=mysqli_query($con, $insert_products); 
+        if($result_query){
+            echo "<script>alert('Successfully inserted products') </script>";  
+        }
     }
 }
 
