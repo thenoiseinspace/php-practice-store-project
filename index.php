@@ -81,12 +81,40 @@ include("includes/connect.php");
 </div>
 
 <!--fourth child-->
-<div class="row">
+<div class="row px-3">
     <div class="col-md-10"> 
         <!-- products -->
         <!--row one-->
         <div class="row">
-            <div class="col-md-4 mb-2">
+<!-- fetching products -->
+        <?php
+            $select_query="Select * from `products`";
+            $result_query=mysqli_query($con, $select_query);
+            // $row=mysqli_fetch_assoc($result_query);
+            // echo $row['product_title'];
+            while($row=mysqli_fetch_assoc($result_query)){
+               $product_id=$row['product_id'];
+               $product_title=$row['product_title'];
+               $product_description=$row['product_description'];
+            //    $product_keywords=$row['product_keywords'];
+               $product_image1=$row['product_image1'];
+               $product_price=$row['product_price'];
+               $category_id=$row['category_id'];
+               $brand_id=$row['brand_id'];
+               echo "<div class='col-md-4 mb-2'>
+               <div class='card' style='width: 18rem;'>
+                <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='...'>
+                   <div class='card-body'>
+                       <h5 class='card-title'>$product_title</h5>
+                       <p class='card-text'>$product_description</p>
+                   <a href='#' class='btn btn-primary'>Add to cart</a>
+                   <a href='#' class='btn btn-primary'>View more</a>
+                   </div>
+               </div>
+           </div> "; 
+            }
+        ?>
+            <!-- <div class="col-md-4 mb-2">
                 <div class="card" style="width: 18rem;">
                  <img src="./images/calla.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -96,9 +124,11 @@ include("includes/connect.php");
                     <a href="#" class="btn btn-primary">View more</a>
                     </div>
                 </div>
-            </div> 
+            </div>  -->
+        <!-- row end -->
+        </div>
 
-            <div class="col-md-4 mb-2">
+            <!-- <div class="col-md-4 mb-2">
             <div class="card" style="width: 18rem;">
                  <img src="./images/chrysanthemum-mauve.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -108,9 +138,9 @@ include("includes/connect.php");
                     <a href="#" class="btn btn-primary">View more</a>
                     </div>
                 </div>
-            </div> 
+            </div>  -->
            
-            <div class="col-md-4 mb-2">
+            <!-- <div class="col-md-4 mb-2">
             <div class="card" style="width: 18rem;">
                  <img src="./images/chrysanthemum-pink.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -120,13 +150,14 @@ include("includes/connect.php");
                     <a href="#" class="btn btn-primary">View more</a>
                     </div>
                 </div>         
-            </div> 
+            </div>  -->
+    <!-- column end -->
     </div>
 
 
 <!--row two-->
 
-<div class="row">
+<!-- <div class="row">
             <div class="col-md-4 mb-2">
                 <div class="card" style="width: 18rem;">
                  <img src="./images/calla.jpg" class="card-img-top" alt="...">
@@ -163,7 +194,7 @@ include("includes/connect.php");
                 </div>      
         </div>
 </div>
-</div>
+</div> -->
 
     <div class="col-md-2 bg-secondary p-0"> 
         <!-- sidenav -->

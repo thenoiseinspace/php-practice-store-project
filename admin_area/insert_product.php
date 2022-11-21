@@ -15,14 +15,14 @@ if(isset($_POST['insert_product'])){
     // $product_title=$_POST['product_title'];
 
     //accessing image temp name
-    $temp_image1=$_FILES['product_image1']['tmp_name'];
+    $tmp_image1=$_FILES['product_image1']['tmp_name'];
 
     //checking empty condition
-    if($product_title=='' or  $description=='' or $product_keywords=='' or $product_category=='' or $product_brand=='' or $product_price=='' or $product_image1=='' or  $temp_image1=='' ){
+    if($product_title=='' or  $description=='' or $product_keywords=='' or $product_category=='' or $product_brand=='' or $product_price=='' or $product_image1=='' or  $tmp_image1=='' ){
         echo "<script>alert('Please fill out all fields.') </script>";
         exit();
     } else{
-        move_uploaded_file($temp_image1, './product_images/$product_image1');
+        move_uploaded_file($tmp_image1, './product_images/$product_image1');
 
         //insert query
         $insert_products="insert into `products` (product_title, product_description, product_keywords, category_id, brand_id, product_image1, product_price, date, status) values ('$product_title', '$description',  '$product_keywords', '$product_category', '$product_brand', '$product_image1', '$product_price', NOW(), '$product_status')"; 
