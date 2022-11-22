@@ -89,6 +89,7 @@ include("functions/common_function.php");
         <div class="row">
 <!-- fetching products -->
         <?php
+        // calling function
         getproducts();
         //     $select_query="Select * from `products` order by product_title";
         //     $result_query=mysqli_query($con, $select_query);
@@ -207,48 +208,8 @@ include("functions/common_function.php");
                 <a href="#" class="nav-link text-light"><h4>Flower types aka Delivery Brands</h4></a>
             </li>
 <?php
-$select_brands= "Select * from `brands`";
-$result_brands=mysqli_query($con, $select_brands);
-// $row_data=mysqli_fetch_assoc($result_brands); 
-// echo $row_data['brand_title'];
-  // to display the brand name in the url instead of the number, change brand_id in the href on line below 'echo' to brand_title
-while($row_data=mysqli_fetch_assoc($result_brands)){
-    $brand_title=$row_data['brand_title'];
-    $brand_id=$row_data['brand_id'];
-    echo " <li class='nav-item'>
-    <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
-</li>" ;
-}
-
+getbrands()
 ?>
-<!-- 
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Lily</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Chrysanthemum</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Dahlia</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Lavender</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Orchid</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Peony</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Rose</a>
-            </li>
-            <li class="nav-itemo">
-                <a href="#" class="nav-link text-light">Succulent</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Wisteria</a>
-            </li> -->
         
         </ul>
 
@@ -258,36 +219,9 @@ while($row_data=mysqli_fetch_assoc($result_brands)){
                 <a href="#" class="nav-link text-light"><h4>Flower colors aka categories</h4></a>
             </li>
 
-            <?php
-$select_categories= "Select * from `categories`";
-$result_categories=mysqli_query($con, $select_categories);
-// $row_data=mysqli_fetch_assoc($result_brands); 
-// echo $row_data['brand_title'];
-while($row_data=mysqli_fetch_assoc($result_categories)){
-    $category_title=$row_data['category_title'];
-    $category_id=$row_data['category_id'];
-    echo " <li class='nav-item'>
-    <a href='index.php?category=$category_id' class='nav-link text-light'>$category_title</a>
-</li>" ;
-}
-
-?>
-            <!-- <li class="nav-item">
-                <a href="#" class="nav-link text-light">Blue/purple</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Burgundy</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Cream/white</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Green</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Pink/red</a>
-            </li> -->
-        
+<?php
+getcategories()        
+?>      
         </ul>
     </div>
 </div> 
