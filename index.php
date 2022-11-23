@@ -36,9 +36,10 @@ include("functions/common_function.php");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
+            <!-- I am skipping the process in video 20 of making a separate file to display all products since the home page does that already -->
           <a class="nav-link" href="#">Products</a>
         </li>
         <li class="nav-item">
