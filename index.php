@@ -91,6 +91,7 @@ include("functions/common_function.php");
         <?php
         // calling function
         getproducts();
+        get_unique_categories();
         //     $select_query="Select * from `products` order by product_title";
         //     $result_query=mysqli_query($con, $select_query);
         //     // $row=mysqli_fetch_assoc($result_query);
