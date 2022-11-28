@@ -37,8 +37,9 @@ function getproducts(){
                </div>
            </div> "; 
             }
+        }
+    }
 }
-}}
 
 //getting unique categories
 function get_unique_categories(){
@@ -149,6 +150,12 @@ while($row_data=mysqli_fetch_assoc($result_categories)){
     <a href='index.php?category=$category_id' class='nav-link text-light'>$category_title</a>
 </li>" ;
 }
+}
+
+
+//searching products
+function search_product(){
+
 }
 
 ?>

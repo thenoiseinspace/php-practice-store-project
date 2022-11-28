@@ -56,8 +56,8 @@ include("functions/common_function.php");
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search-data">
+        <input type="submit" value="search" class="btn btn-outline-light" name="search-data-product">
       </form>
     </div>
   </div>
