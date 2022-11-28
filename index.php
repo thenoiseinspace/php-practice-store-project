@@ -231,12 +231,14 @@ getcategories()
 
 
 
-<!--last child - footer-->
+<!-- last child - footer
 <div class="bg-info p-3 text-center">
     <p>All rights reserved 2022</p>
 
 </div>
-</div> 
+</div>  -->
+<!-- include footer -->
+<?php include('./includes/footer.php') ?>
 
 
 <!-- <h1>Hello intro to ecomm site</h1> -->
