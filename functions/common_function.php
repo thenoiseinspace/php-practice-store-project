@@ -161,6 +161,10 @@ function search_product(){
         $search_data_value=$_GET['search_data'];
     $search_query=" Select * from `products` where product_keywords like '%$search_data_value%' ";
             $result_query=mysqli_query($con, $search_query);
+            $num_of_rows=mysqli_num_rows($result_query);
+    if($num_of_rows==0){
+        echo "<h2 class='text-center' >No stock for this keyword</h2>";
+    }
             // $row=mysqli_fetch_assoc($result_query);
             // echo $row['product_title'];
             while($row=mysqli_fetch_assoc($result_query)){
