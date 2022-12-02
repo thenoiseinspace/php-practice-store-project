@@ -55,7 +55,7 @@ include("functions/common_function.php");
           <a class="nav-link" href="#">Total Price: 100</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex" action="search_product.php" method="get">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search-data">
         <input type="submit" value="search" class="btn btn-outline-light" name="search-data-product">
       </form>
@@ -92,116 +92,13 @@ include("functions/common_function.php");
         <?php
         // calling function
         getproducts();
+        //search_product();
         get_unique_categories();
         get_unique_brands();
-        //     $select_query="Select * from `products` order by product_title";
-        //     $result_query=mysqli_query($con, $select_query);
-        //     // $row=mysqli_fetch_assoc($result_query);
-        //     // echo $row['product_title'];
-        //     while($row=mysqli_fetch_assoc($result_query)){
-        //        $product_id=$row['product_id'];
-        //        $product_title=$row['product_title'];
-        //        $product_description=$row['product_description'];
-        //     //    $product_keywords=$row['product_keywords'];
-        //     //the part with the images is in video 14 around the 14:30 mark
-        //        $product_image1=$row['product_image1'];
-        //        $product_price=$row['product_price'];
-        //        $category_id=$row['category_id'];
-        //        $brand_id=$row['brand_id'];
-        //        echo "<div class='col-md-4 mb-2'>
-        //        <div class='card' style='width: 18rem;'>
-        //         <img src='./admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
-        //            <div class='card-body'>
-        //                <h5 class='card-title'>$product_title</h5>
-        //                <p class='card-text'>$product_description</p>
-        //            <a href='#' class='btn btn-primary'>Add to cart</a>
-        //            <a href='#' class='btn btn-primary'>View more</a>
-        //            </div>
-        //        </div>
-        //    </div> "; 
-        //     }
         ?>
-            <!-- <div class="col-md-4 mb-2">
-                <div class="card" style="width: 18rem;">
-                 <img src="./images/calla.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                    <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>
-            </div>  -->
-        <!-- row end -->
         </div>
-
-            <!-- <div class="col-md-4 mb-2">
-            <div class="card" style="width: 18rem;">
-                 <img src="./images/chrysanthemum-mauve.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                    <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>
-            </div>  -->
-           
-            <!-- <div class="col-md-4 mb-2">
-            <div class="card" style="width: 18rem;">
-                 <img src="./images/chrysanthemum-pink.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                    <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>         
-            </div>  -->
     <!-- column end -->
     </div>
-
-
-<!--row two-->
-
-<!-- <div class="row">
-            <div class="col-md-4 mb-2">
-                <div class="card" style="width: 18rem;">
-                 <img src="./images/calla.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                    <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>
-            </div> 
-
-            <div class="col-md-4 mb-2">
-            <div class="card" style="width: 18rem;">
-                 <img src="./images/chrysanthemum-mauve.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                    <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>
-            </div> 
-           
-            <div class="col-md-4 mb-2">
-            <div class="card" style="width: 18rem;">
-                 <img src="./images/chrysanthemum-pink.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                    <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>      
-        </div>
-</div>
-</div> -->
 
     <div class="col-md-2 bg-secondary p-0"> 
         <!-- sidenav -->
@@ -229,19 +126,9 @@ getcategories()
     </div>
 </div> 
 
-
-
-<!-- last child - footer
-<div class="bg-info p-3 text-center">
-    <p>All rights reserved 2022</p>
-
-</div>
-</div>  -->
+<!-- last child - footer  -->
 <!-- include footer -->
 <?php include('./includes/footer.php') ?>
-
-
-<!-- <h1>Hello intro to ecomm site</h1> -->
 
     <!-- bootstrap js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
