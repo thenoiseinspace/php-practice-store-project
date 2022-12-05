@@ -27,12 +27,12 @@ function getproducts(){
                $brand_id=$row['brand_id'];
                echo "<div class='col-md-4 mb-2'>
                <div class='card' style='width: 18rem;'>
-                <img src='./admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
+                <img src='../admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
                    <div class='card-body'>
                        <h5 class='card-title'>$product_title</h5>
                        <p class='card-text'>$product_description</p>
                    <a href='#' class='btn btn-primary'>Add to cart</a>
-                   <a href='#' class='btn btn-primary'>View more</a>
+                   <a href='product_details.php?_product_id=$product_id' class='btn btn-secondary'>View more</a>
                    </div>
                </div>
            </div> "; 
@@ -67,7 +67,8 @@ function get_unique_categories(){
                $product_price=$row['product_price'];
                $category_id=$row['category_id'];
                $brand_id=$row['brand_id'];
-               echo "<div class='col-md-4 mb-2'>
+            //    the difference between the one that works and the ones that dont is the echo statement here
+               echo "<div class='col-md-4 mb-2'>;
                <div class='card' style='width: 18rem;'>
                 <img src='./admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
                    <div class='card-body'>
