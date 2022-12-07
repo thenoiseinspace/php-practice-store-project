@@ -92,6 +92,7 @@ include("functions/common_function.php");
         <?php
         // calling function
         getproducts();
+        view_details();
         search_product();
         get_unique_categories();
         get_unique_brands();
