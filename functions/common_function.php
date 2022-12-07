@@ -193,4 +193,64 @@ function search_product(){
         }
 }
 
+
+//view details
+
+function view_details(){
+    global $con; 
+
+    //condition to check if isset or not, ie if a specific brand/cat has been selected to display. If not, display all of them
+    if(isset($_GET['product_id'])){
+    if(!isset($_GET['category'])){
+        if(!isset($_GET['brand'])){
+            $product_id=$_GET['product_id'];
+    $select_query="Select * from `products` where product_id=$product_id";
+            $result_query=mysqli_query($con, $select_query);
+            while($row=mysqli_fetch_assoc($result_query)){
+               $product_id=$row['product_id'];
+               $product_title=$row['product_title'];
+               $product_description=$row['product_description'];
+            //    $product_keywords=$row['product_keywords'];
+            //the part with the images is in video 14 around the 14:30 mark
+               $product_image1=$row['product_image1'];
+               //if you had multiple images, you'd repeat that line with product_image2 etc
+               $product_price=$row['product_price'];
+               $category_id=$row['category_id'];
+               $brand_id=$row['brand_id'];
+               echo "<div class='col-md-4 mb-2'>
+               <div class='card' style='width: 18rem;'>
+                <img src='../admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
+                   <div class='card-body'>
+                       <h5 class='card-title'>$product_title</h5>
+                       <p class='card-text'>$product_description</p>
+                   <a href='#' class='btn btn-primary'>Add to cart</a>
+                   <a href='product_details.php?_product_id=$product_id' class='btn btn-secondary'>View more</a>
+                   </div>
+               </div>
+           </div> 
+           
+           
+           <div class='col-md-8'>
+   
+           <div class='row'>
+               <div class='col-md-12'>
+                   <h4 class='text-center text-info mb-5'>Related products</h4>
+               </div>
+               <div class='col-md-6'>
+                   <img src='./admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
+               </div>
+               <div class='col-md-6'>
+                   <img src='./admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
+               </div>
+           </div>
+
+       </div>
+           
+           "; 
+            }
+        }
+    }
+}
+}
+
 ?>

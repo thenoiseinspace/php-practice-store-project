@@ -89,7 +89,7 @@ include("functions/common_function.php");
         <!--row one-->
         <div class="row">
             <div class="col-md-4">
-                <!-- card -->
+                
                 <div class='card' style='width: 18rem;'>
                 <img src='./admin_area/product_images/$product_image1.jpg' class='card-img-top' alt='$product_title'>
                    <div class='card-body'>
@@ -98,10 +98,10 @@ include("functions/common_function.php");
                    <a href='#' class='btn btn-primary'>Add to cart</a>
                    <a href='product_details.php?_product_id=$product_id' class='btn btn-secondary'>View more</a>
                    </div>
-               </div>  
+               </div>   
             </div>
             <div class="col-md-8">
-                <!-- related images -->
+                <!-- related images  -->
                 <div class="row">
                     <div class="col-md-12">
                         <h4 class="text-center text-info mb-5">Related products</h4>
@@ -121,6 +121,7 @@ include("functions/common_function.php");
         // calling function
        
         search_product();
+        view_details(); 
         get_unique_categories();
         get_unique_brands();
         ?>
