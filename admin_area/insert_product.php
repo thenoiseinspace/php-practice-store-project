@@ -22,8 +22,9 @@ if(isset($_POST['insert_product'])){
         echo "<script>alert('Please fill out all fields.') </script>";
         exit();
     } else{
+    
         // I added the file extension to this line
-        move_uploaded_file($tmp_image1, './product_images/$product_image1.jpg');
+        move_uploaded_file($tmp_image1, "./product_images/$product_image1.jpg");
 
         //insert query
         $insert_products="insert into `products` (product_title, product_description, product_keywords, category_id, brand_id, product_image1, product_price, date, status) values ('$product_title', '$description',  '$product_keywords', '$product_category', '$product_brand', '$product_image1', '$product_price', NOW(), '$product_status')"; 
