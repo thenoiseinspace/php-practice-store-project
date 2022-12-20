@@ -1,4 +1,8 @@
 <!-- http://localhost/php-practice-store-project/index.php -->
+<!-- admin area: http://localhost/php-practice-store-project/admin_area/index.php?insert_brand# -->
+
+<!-- Database is hosted here: http://localhost/phpmyadmin/index.php?route=/database/structure&db=flowerstore -->
+
 <!-- linking connection file -->
 <?php
 include("includes/connect.php");
